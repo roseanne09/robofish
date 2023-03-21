@@ -136,7 +136,7 @@ static const char PROGMEM INDEX_HTML[] = R"rawliteral(
 <html>
 
 <head>
-  <title>ESP32-CAM Robot</title>
+  <title>Underwater ROV</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
