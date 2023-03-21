@@ -251,8 +251,8 @@ input:checked + .slider:before {
 <body>
   <h1>Underwater ROV</h1>
   <img src="" id="photo">
-  <label class="switch" onmousedown="toggleCheckbox('led');"
-  ontouchstart="toggleCheckbox('led');">
+  <label class="switch" onmousedown="toggleCheckbox(this.querySelector('input[type=checkbox]').checked ? 'on' : 'off');"
+  ontouchstart="toggleCheckbox(this.querySelector('input[type=checkbox]').checked ? 'on' : 'off');">
     <input type="checkbox">
     <span class="slider"></span>
   </label>
@@ -419,9 +419,14 @@ static esp_err_t cmd_handler(httpd_req_t *req)
 
   int res = 0;
 
-  if (!strcmp(variable, "led"))
+  if (!strcmp(variable, "off"))
   {
     digitalWrite(led, HIGH);
+  }
+
+  if (!strcmp(variable, "on"))
+  {
+    digitalWrite(led, LOW);
   }
 
   if (!strcmp(variable, "up"))
