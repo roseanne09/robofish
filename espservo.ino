@@ -297,7 +297,7 @@ static const char PROGMEM INDEX_HTML[] = R"rawliteral(
 
   </table>
   <!--<img src="Images\LOGO.png" class="logo"></img>-->
-  <span ></span>
+  </br>
   <span class="Logo">TEC Wizards</span>
   <script>
     function toggleCheckbox(x) {
