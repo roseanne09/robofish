@@ -180,82 +180,107 @@ static const char PROGMEM INDEX_HTML[] = R"rawliteral(
       width: auto;
       max-width: 100%;
       height: auto;
+      margin-bottom: 20px;
     }
 
     .logo {
       position: absolute;
       bottom: 10px;
       right: 10px;
-      height: 150px;
       width: auto;
+      font-family: Charlesworth;
+      font-variant: small-caps;
+      color: #214a95;
+      font-size: large;
     }
+
+    .light {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+
     .switch {
- --secondary-container: #3a4b39;
- --primary: #84da89;
- font-size: 17px;
- position: relative;
- display: inline-block;
- width: 3.7em;
- height: 1.8em;
-}
+      --secondary-container: #466445;
+      --primary: #84da89;
+      font-size: 17px;
+      position: relative;
+      display: inline-block;
+      width: 3.7em;
+      height: 1.8em;
+    }
 
-.switch input {
- display: none;
- opacity: 0;
- width: 0;
- height: 0;
-}
+    .switch input {
+      display: none;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
 
-.slider {
- position: absolute;
- cursor: pointer;
- top: 0;
- left: 0;
- right: 0;
- bottom: 0;
- background-color: #850e0e;
- transition: .2s;
- border-radius: 30px;
-}
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #850e0e;
+      transition: .2s;
+      border-radius: 30px;
+    }
 
-.slider:before {
- position: absolute;
- content: "";
- height: 1.4em;
- width: 1.4em;
- border-radius: 20px;
- left: 0.2em;
- bottom: 0.2em;
- background-color: #d58181;
- transition: .4s;
-}
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 1.4em;
+      width: 1.4em;
+      border-radius: 20px;
+      left: 0.2em;
+      bottom: 0.2em;
+      background-color: #d58181;
+      transition: .4s;
+    }
 
-input:checked + .slider::before {
- background-color: var(--primary);
-}
+    input:checked+.slider::before {
+      background-color: var(--primary);
+    }
 
-input:checked + .slider {
- background-color: var(--secondary-container);
-}
+    input:checked+.slider {
+      background-color: var(--secondary-container);
+    }
 
-input:focus + .slider {
- box-shadow: 0 0 1px var(--secondary-container);
-}
+    input:focus+.slider {
+      box-shadow: 0 0 1px var(--secondary-container);
+    }
 
-input:checked + .slider:before {
- transform: translateX(1.9em);
-}
+    input:checked+.slider:before {
+      transform: translateX(1.9em);
+    }
   </style>
 </head>
 
 <body>
   <h1>Underwater ROV</h1>
   <img src="" id="photo">
-  <label class="switch" onmousedown="toggleCheckbox(this.querySelector('input[type=checkbox]').checked ? 'on' : 'off');"
-  ontouchstart="toggleCheckbox(this.querySelector('input[type=checkbox]').checked ? 'on' : 'off');">
-    <input type="checkbox">
-    <span class="slider"></span>
-  </label>
+  <br>
+  <span class="light">
+    <label class="switch"
+      onmousedown="toggleCheckbox(this.querySelector('input[type=checkbox]').checked ? 'on' : 'off');"
+      ontouchstart="toggleCheckbox(this.querySelector('input[type=checkbox]').checked ? 'on' : 'off');">
+      <input type="checkbox">
+      <span class="slider"></span>
+    </label>
+    <svg style="color: #f3da35" width="26" height="26" fill="currentColor" class="bi bi-lightbulb-fill"
+      viewBox="0 0 16 16">
+      <path
+        d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5z"
+        fill="#f3da35"></path>
+    </svg>
+  </span>
   <table>
     <tr>
       <td colspan="5" align="center"><button class="button" onmousedown="toggleCheckbox('up');"
@@ -271,7 +296,9 @@ input:checked + .slider:before {
     </tr>
 
   </table>
-  <img src="Images\LOGO.png" class="logo"></img>
+  <!--<img src="Images\LOGO.png" class="logo"></img>-->
+  <span ></span>
+  <span class="Logo">TEC Wizards</span>
   <script>
     function toggleCheckbox(x) {
       var xhr = new XMLHttpRequest();
