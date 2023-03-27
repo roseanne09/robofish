@@ -119,7 +119,7 @@ const char *password = "RUGVED13";
 #error "Camera model not selected"
 #endif
 
-#define led 2
+#define led 4
 #define up 14
 #define down 15
 #define left 12
